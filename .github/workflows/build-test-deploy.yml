@@ -33,6 +33,10 @@ jobs:
       actions: write
       pages: write
       id-token: write
+    environment:
+      name: production
+      url: ${{ steps.deployment.output.page_url }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository code
         uses: actions/checkout@v3
